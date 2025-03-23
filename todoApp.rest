@@ -1,0 +1,25 @@
+###
+GET http://localhost:3000/todos
+
+###
+GET http://localhost:3000/todo/67df00f13267f6c21102ce6b
+
+###
+PATCH http://localhost:3000/todos/67df00f13267f6c21102ce6b
+Content-Type: application/json
+
+{
+    "text":"Updated Todo Text"
+}
+
+###
+POST http://localhost:3000/todos/addTodo
+Content-Type: application/json
+
+{
+    "text":"Todo 56",
+    "id":7
+}
+
+###
+DELETE http://localhost:3000/todos/67dfaf90fb6410c45ff99539
