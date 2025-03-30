@@ -1,0 +1,25 @@
+###
+GET http://localhost:3000/user
+
+###
+GET http://localhost:3000/user/67e949350188236d757386ae
+
+###
+PATCH http://localhost:3000/user/67e949350188236d757386ae
+Content-Type: application/json
+
+{
+    "username":"Updated username"
+}
+
+###
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+   "username":"d",
+   "email":"d@yopmail.com"
+}
+
+###
+DELETE http://localhost:3000/user/67e949350188236d757386ae

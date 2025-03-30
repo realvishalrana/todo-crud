@@ -1,0 +1,26 @@
+###
+GET http://localhost:3000/comment
+
+###
+GET http://localhost:3000/comment/67e949350188236d757386ae
+
+###
+PATCH http://localhost:3000/user/67e949350188236d757386ae
+Content-Type: application/json
+
+{
+    "username":"Updated username"
+}
+
+###
+POST http://localhost:3000/comment
+Content-Type: application/json
+
+{
+   "text":"d",
+   "user":"d@yopmail.com",
+   "blog":""
+}
+
+###
+DELETE http://localhost:3000/user/67e949350188236d757386ae
