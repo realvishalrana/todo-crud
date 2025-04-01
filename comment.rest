@@ -2,14 +2,25 @@
 GET http://localhost:3000/comment
 
 ###
-GET http://localhost:3000/comment/67e949350188236d757386ae
+GET http://localhost:3000/comment/67ec05b666523de559fedaf3
+
+// get comments by blog
+###
+GET http://localhost:3000/comment/blog/67e951f236c84312865fb69e
+
+
+// get comments by user
+###
+GET http://localhost:3000/comment/user/67e949350188236d757386ae
+
+
 
 ###
-PATCH http://localhost:3000/user/67e949350188236d757386ae
+PATCH http://localhost:3000/comment/67ec05b666523de559fedaf3
 Content-Type: application/json
 
 {
-    "username":"Updated username"
+    "text":"Update First comment 1111"
 }
 
 ###
@@ -17,10 +28,10 @@ POST http://localhost:3000/comment
 Content-Type: application/json
 
 {
-   "text":"d",
-   "user":"d@yopmail.com",
-   "blog":""
+   "text":"First comment",
+   "user":"67e949350188236d757386ae",
+   "blog":"67e951f236c84312865fb69e"
 }
 
 ###
-DELETE http://localhost:3000/user/67e949350188236d757386ae
+DELETE http://localhost:3000/comment/67ec05b666523de559fedaf3

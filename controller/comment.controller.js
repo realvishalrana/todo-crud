@@ -54,10 +54,32 @@ const deleteComment = async (req, res) => {
   }
 };
 
+const getCommentsByBlogId = async (req, res) => {
+  try {
+    const { blogId } = req.params;
+    const comments = await commentModal.find({ blog: blogId });
+    return res.json(comments);
+  } catch (error) {
+    console.log("errors", error);
+  }
+};
+
+const getCommentsByUserId = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const comments = await commentModal.find({ user: userId });
+    return res.json(comments);
+  } catch (error) {
+    console.log("errors", error);
+  }
+};
+
 module.exports = {
   getAllComments,
   getCommentById,
   createComment,
   updateComment,
   deleteComment,
+  getCommentsByBlogId,
+  getCommentsByUserId,
 };
