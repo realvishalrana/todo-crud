@@ -1,6 +1,7 @@
 ###
 GET http://localhost:3000/blog
 
+
 ###
 GET http://localhost:3000/blog/67e9505513e2d8e32e6a70b2
 

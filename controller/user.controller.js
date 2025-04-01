@@ -1,4 +1,6 @@
 const userModel = require("../models/user.models");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const getAllUsers = async (req, res) => {
   try {
@@ -31,9 +33,12 @@ const createUser = async (req, res) => {
   try {
     const userData = req.body;
 
-    if (await userModel.exists({ email: userData.email })) {
-      return res.status(400).json({ message: "User already exists" });
+    const existingUser = await userModel.findOne({ email: userData.email });
+    if (existingUser) {
+      return res.status(400).json({ error: "Email already exists" });
     }
+
+    userData.password = await bcrypt.hash(userData.password, 10);
 
     const user = await userModel.create(userData);
     res.status(201).json(user);
@@ -79,10 +84,31 @@ const deleteUser = async (req, res) => {
   }
 };
 
+const loginUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await userModel.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: "Invalid password" });
+    }
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+      expiresIn: "1h",
+    });
+    res.status(200).json({ token });
+  } catch (error) {
+    console.log("errors", error);
+  }
+};
+
 module.exports = {
   getAllUsers,
   getUserById,
   createUser,
   updateUser,
   deleteUser,
+  loginUser,
 };
