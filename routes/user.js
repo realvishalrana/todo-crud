@@ -4,12 +4,12 @@ import { validate } from "../middleware/validate.js";
 import validateObjectId from "../middleware/validateObjectId.js";
 
 import {
-  getAllUser,
   getUserById,
   createUser,
   updateUser,
   deleteUser,
   loginUser,
+  getAllUsers,
 } from "../controller/user.js";
 import { createUserSchema, loginUserSchema } from "../validation/user.js";
 
@@ -35,7 +35,7 @@ router.post("/login", validate(loginUserSchema), loginUser);
 
 router.use(verifyToken);
 
-router.get("/", getAllUser);
+router.get("/", getAllUsers);
 router.get("/:id", validateObjectId, getUserById);
 router.patch("/:id", validateObjectId, updateUser);
 router.delete("/:id", validateObjectId, deleteUser);
