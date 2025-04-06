@@ -1,0 +1,30 @@
+###
+GET http://localhost:3000/blog
+
+
+###
+GET http://localhost:3000/blog/67e9505513e2d8e32e6a70b2
+
+###
+GET http://localhost:3000/blog/user/67e949350188236d757386ae
+
+###
+PATCH http://localhost:3000/blog/67e9505513e2d8e32e6a70b2
+Content-Type: application/json
+
+{
+    "text":"Updated Todo Text"
+}
+
+###
+POST http://localhost:3000/blog
+Content-Type: application/json
+
+{
+    "title":"React Blog 1",
+    "body":"Basic es6",
+    "author":"67e949350188236d757386ae"
+}
+
+###
+DELETE http://localhost:3000/blog/67e9505513e2d8e32e6a70b2

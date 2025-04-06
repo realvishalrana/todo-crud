@@ -1,0 +1,41 @@
+###
+GET http://localhost:3000/user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VjMTYwMDllYzUxMmVmMDY5MzVhYzkiLCJpYXQiOjE3NDM1MjcwOTcsImV4cCI6MTc0MzUzMDY5N30.zrbGc_g-AA_9mYvuK8STZRB25uzjmOwMwCLwHR2BeJw
+
+###
+POST  http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+   "email":"d1@yopmail.com",
+   "password":"Test@123"
+}
+
+
+###
+GET http://localhost:3000/user/67ec16009ec512ef06935ac9
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VjMTYwMDllYzUxMmVmMDY5MzVhYzkiLCJpYXQiOjE3NDM1MjcwOTcsImV4cCI6MTc0MzUzMDY5N30.zrbGc_g-AA_9mYvuK8STZRB25uzjmOwMwCLwHR2BeJw
+
+###
+PATCH http://localhost:3000/user/67ec16009ec512ef06935ac9
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VjMTYwMDllYzUxMmVmMDY5MzVhYzkiLCJpYXQiOjE3NDM1MjcwOTcsImV4cCI6MTc0MzUzMDY5N30.zrbGc_g-AA_9mYvuK8STZRB25uzjmOwMwCLwHR2BeJw
+
+{
+    "username":"Updated username"
+}
+
+###
+POST http://localhost:3000/user
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VjMTYwMDllYzUxMmVmMDY5MzVhYzkiLCJpYXQiOjE3NDM1MjcwOTcsImV4cCI6MTc0MzUzMDY5N30.zrbGc_g-AA_9mYvuK8STZRB25uzjmOwMwCLwHR2BeJw
+
+{
+   "username":"d",
+   "email":"d1@yopmail.com",
+   "password":"Test@123"
+}
+
+###
+DELETE http://localhost:3000/user/67e949350188236d757386ae
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VjMTYwMDllYzUxMmVmMDY5MzVhYzkiLCJpYXQiOjE3NDM1MjcwOTcsImV4cCI6MTc0MzUzMDY5N30.zrbGc_g-AA_9mYvuK8STZRB25uzjmOwMwCLwHR2BeJw
