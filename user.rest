@@ -1,0 +1,49 @@
+###
+GET http://localhost:3000/user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhakB5b3BtYWlsLmNvbSIsImlhdCI6MTc0MzkyOTQ0M30.0f2I3SHEn3Y0W3zothvSH1uSaLX57RKN9Q_FEDMw_XI
+
+###
+GET http://localhost:3000/user?username=Virat
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhakB5b3BtYWlsLmNvbSIsImlhdCI6MTc0MzkyOTQ0M30.0f2I3SHEn3Y0W3zothvSH1uSaLX57RKN9Q_FEDMw_XI
+
+###
+GET http://localhost:3000/user?email=raj@yopmail.com
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhakB5b3BtYWlsLmNvbSIsImlhdCI6MTc0MzkyOTQ0M30.0f2I3SHEn3Y0W3zothvSH1uSaLX57RKN9Q_FEDMw_XI
+
+###
+GET http://localhost:3000/user?search=user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhakB5b3BtYWlsLmNvbSIsImlhdCI6MTc0MzkyOTQ0M30.0f2I3SHEn3Y0W3zothvSH1uSaLX57RKN9Q_FEDMw_XI
+
+
+###
+POST http://localhost:3000/user/create
+Content-Type: application/json
+
+{
+    "username":"Virat",
+    "email":"virat@yopmail.com",
+    "password":"Test@123"
+}
+
+###
+PATCH  http://localhost:3000/user/67f22ba29c7ea20d452836f9
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhakB5b3BtYWlsLmNvbSIsImlhdCI6MTc0MzkyOTQ0M30.0f2I3SHEn3Y0W3zothvSH1uSaLX57RKN9Q_FEDMw_XI
+Content-Type: application/json
+
+{
+    "username":"Raj324 33 23 23423 4234234"
+}
+
+###
+DELETE http://localhost:3000/user/67ec16009ec512e
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhakB5b3BtYWlsLmNvbSIsImlhdCI6MTc0MzkyOTQ0M30.0f2I3SHEn3Y0W3zothvSH1uSaLX57RKN9Q_FEDMw_XI
+
+
+###
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "email":"raj@yopmail.com",
+    "password":"Test@123"
+}
